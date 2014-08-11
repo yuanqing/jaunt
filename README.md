@@ -1,6 +1,6 @@
 # Jaunt.js [![npm Version](http://img.shields.io/npm/v/jaunt.svg?style=flat)](https://www.npmjs.org/package/jaunt) [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
 
-> Access the value in an object or array using to a dot-delimited string.
+> Access a value in an object or array using a dot-delimited string.
 
 ```js
 var obj = {
