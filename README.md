@@ -17,14 +17,14 @@ var obj = {
 jaunt(obj, 'foo.bar.0'); //=> "Hello"
 jaunt(obj, ['foo', 'bar', 1]); //=> "World"
 
-jaunt(obj, 'invalid');   //=> null
+jaunt(obj, 'invalid'); //=> undefined
 ```
 
 ## API
 
 ### jaunt(obj, path)
 
-Returns the value in `obj` corresponding to `path`. Returns `null` if `path` does not exist.
+Returns the value in `obj` corresponding to `path`. Returns `undefined` if `path` does not exist.
 
 - `obj` is an `object` or an `array`.
 - `path` is a dot-delimited `string` or an `array` of keys.
