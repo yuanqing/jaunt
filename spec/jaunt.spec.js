@@ -1,4 +1,8 @@
-/* globals describe, it, expect, jaunt */
+/* globals describe, it, expect */
+'use strict';
+
+var jaunt = require('..');
+
 describe('jaunt', function() {
 
   var obj = {

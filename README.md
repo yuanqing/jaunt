@@ -1,8 +1,6 @@
-# Jaunt.js [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
+# Jaunt.js [![npm Version](http://img.shields.io/npm/v/jaunt.svg?style=flat)](https://www.npmjs.org/package/jaunt) [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
 
-> Access a value in an object or array using a dot-delimited string.
-
-## Usage
+> Access the value in an object or array using to a dot-delimited string.
 
 ```js
 var obj = {
@@ -24,7 +22,7 @@ jaunt(obj, 'invalid'); //=> undefined
 Returns the value in `obj` corresponding to `path`. Returns `undefined` if `path` does not exist.
 
 - `obj` is an `object` or an `array`.
-- `path` is a dot-delimited `string` or an `array` of keys.
+- `path` is a dot-delimited `string` of keys, or an `array` of keys.
 
 ## Installation
 
@@ -33,8 +31,6 @@ Install via [npm](https://www.npmjs.org/package/jaunt):
 ```bash
 $ npm i --save jaunt
 ```
-
-Or [grab the minified script](https://github.com/yuanqing/jaunt/raw/master/dist/jaunt.min.js) from the [`dist`](https://github.com/yuanqing/jaunt/tree/master/dist) directory.
 
 ## License
 
