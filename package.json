@@ -1,7 +1,7 @@
 {
   "name": "jaunt",
-  "version": "1.0.0",
-  "description": "Access a value in an object or array given a dot-delimited string.",
+  "version": "1.0.1",
+  "description": "Access a value in an object or array using a dot-delimited string.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {

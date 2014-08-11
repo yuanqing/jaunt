@@ -1,5 +1,13 @@
-/* globals define */
-var f = function () {
+(function (root, factory) {
+  /* istanbul ignore next */
+  if (typeof define === 'function' && define.amd) {
+    define(factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
+  } else {
+    root.jaunt = factory();
+  }
+})(this, function() {
 
   'use strict';
 
@@ -22,15 +30,4 @@ var f = function () {
     return obj;
   };
 
-};
-
-/* istanbul ignore next */
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory;
-  } else {
-    root.jaunt = factory(root);
-  }
-})(this, f);
+});

@@ -1,16 +1,13 @@
 # Jaunt.js [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
 
-> Access a value in an object or array given a dot-delimited string.
+> Access a value in an object or array using a dot-delimited string.
 
 ## Usage
 
 ```js
 var obj = {
   foo: {
-    bar: [
-      { baz: 'Hello' },
-      { qux: 'World' }
-    ]
+    bar: ['Hello', 'World']
   }
 };
 
