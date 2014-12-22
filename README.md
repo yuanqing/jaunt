@@ -1,6 +1,6 @@
 # Jaunt.js [![npm Version](http://img.shields.io/npm/v/jaunt.svg?style=flat)](https://www.npmjs.org/package/jaunt) [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
 
-> Get or set a value in an object or array using a dot-delimited string.
+> Get/set a value in an Object/Array using a dot-delimited String or Array of keys.
 
 ## Usage
 
@@ -28,17 +28,27 @@ var obj = {
   }
 };
 
-jaunt.set(obj, 'foo.bar.0', 'Goodbye');
+jaunt.set(obj, 'foo.bar.0', 'Modified');
 /* =>
  * {
  *   foo: {
- *     bar: ['Goodbye', 'World']
+ *     bar: ['Modified', 'World']
  *   }
+ * }
+ */
+
+jaunt.set(obj, 'baz', 'New');
+/* =>
+ * {
+ *   foo: {
+ *     bar: ['Modified', 'World']
+ *   },
+ *   baz: 'New'
  * }
  */
 ```
 
-Go!
+Note the syntax for referencing Array elements; it is `foo.bar.0` rather than `foo.bar[0]`.
 
 ## API
 
@@ -46,23 +56,47 @@ Go!
 
 Returns the value in `obj` corresponding to `path`. Returns `undefined` if `path` does not exist.
 
-- `obj` is an `object` or an `array`.
-- `path` is a dot-delimited `string` of keys, or an `array` of keys.
+- `obj` &mdash; An Object or Array.
+- `path` &mdash; A dot-delimited String of keys, or an Array of keys.
 
 ### jaunt.set(obj, path, val)
 
-Sets the element corresponding to `path` in `obj` to the specified `val`. Returns the `obj`.
+Sets the element corresponding to `path` in the `obj` to the specified `val`. &ldquo;Any intermediate&rdquo; elements in the path will be created if they do not exist. Returns the modified `obj`.
 
-- `obj` is an `object` or an `array`.
-- `path` is a dot-delimited `string` of keys, or an `array` of keys.
+- `obj` &mdash; An Object or Array.
+- `path` &mdash; A dot-delimited String of keys, or an Array of keys.
+- `val` &mdash; The value to set `path` to.
 
 ## Installation
 
-Install via [npm](https://www.npmjs.org/package/jaunt):
+Install via [npm](https://www.npmjs.org/):
 
 ```bash
 $ npm i --save jaunt
 ```
+
+Install via [bower](http://bower.io/):
+
+```bash
+$ bower i --save yuanqing/jaunt
+```
+
+To use Jaunt in the browser, include [the minified script](https://github.com/yuanqing/jaunt/blob/master/jaunt.min.js) in your HTML:
+
+```html
+<body>
+  <!-- ... -->
+  <script src="path/to/jaunt.min.js"></script>
+  <script>
+    // jaunt available here
+  </script>
+</body>
+```
+
+## Changelog
+
+- 1.0.0
+  - Initial release
 
 ## License
 
