@@ -95,6 +95,10 @@ To use Jaunt in the browser, include [the minified script](https://github.com/yu
 
 ## Changelog
 
+- 1.1.3
+  - Expose module for use in the browser
+  - Add minified version of the module
+  - Add bower.json
 - 1.0.0
   - Initial release
 
