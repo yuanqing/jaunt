@@ -6,7 +6,7 @@
   "authors": [
     "Lim Yuan Qing <hello@yuanqing.sg>"
   ],
-  "description": "Get and set a value in an object/array using a dot-delimited string or array of keys.",
+  "description": "Get or set a value in an object/array using a dot-delimited string or array of keys.",
   "license": "MIT",
   "ignore": [
     "**/.*",

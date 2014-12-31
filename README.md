@@ -1,6 +1,6 @@
 # Jaunt.js [![npm Version](http://img.shields.io/npm/v/jaunt.svg?style=flat)](https://www.npmjs.org/package/jaunt) [![Build Status](https://img.shields.io/travis/yuanqing/jaunt.svg?style=flat)](https://travis-ci.org/yuanqing/jaunt) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/jaunt.svg?style=flat)](https://coveralls.io/r/yuanqing/jaunt)
 
-> Get and set a value in an object/array using a dot-delimited string or array of keys.
+> Get or set a value in an object/array using a dot-delimited string or array of keys.
 
 ## Usage
 
