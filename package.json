@@ -21,9 +21,9 @@
     "uglify-js": "^2.4.16"
   },
   "scripts": {
-    "lint": "node_modules/.bin/jshint --verbose index.js test/*.js",
-    "test": "rm -rf coverage && node_modules/.bin/istanbul cover tape test/*.js",
-    "dist": "rm -rf dist && mkdir dist && node_modules/.bin/browserify index.js --debug --outfile dist/jaunt.js --standalone jaunt && node_modules/.bin/uglifyjs dist/jaunt.js --output dist/jaunt.min.js",
+    "lint": "jshint --verbose index.js test/*.js",
+    "test": "rm -rf coverage && istanbul cover tape test/*.js",
+    "dist": "rm -rf dist && mkdir dist && browserify index.js --debug --outfile dist/jaunt.js --standalone jaunt && uglifyjs dist/jaunt.js --output dist/jaunt.min.js",
     "build": "npm run lint && npm test && npm run dist"
   },
   "keywords": [
