@@ -1,6 +1,6 @@
 'use strict';
 
-var isInt = require('numero').isInt;
+var parseInteger = require('numero').parseInteger;
 var check = require('cheque');
 
 var trimKey = function(key) {
@@ -19,21 +19,20 @@ module.exports.set = function(obj, path, val) {
   // traverse `obj` using `path` (up to the second-last key), updating `o` along the way
   var o = obj;
   var i = -1;
-  var len = path.length-1; // second-last key
+  var len = path.length-1;
   while (++i < len) {
     var key = trimKey(path[i]);
     if (!(key in o)) {
       // current `key` does not exist; set it to either [] or {} by looking at `nextKey`
       var nextKey = trimKey(path[i+1]);
-      o[key] = isInt(nextKey) ? [] : {};
+      o[key] = parseInteger(nextKey) !== null ? [] : {};
     }
     o = o[key];
   }
 
-  // `o` is the
+  // finally set the `val`
   o[trimKey(path[len])] = val;
 
-  // return the original `obj`
   return obj;
 
 };
@@ -54,13 +53,19 @@ module.exports.get = function(obj, path) {
   while (++i < len) {
     var key = trimKey(path[i]);
     // update `obj`
-    if ((check.isObject(obj) || check.isArray(obj)) && key in obj) {
-      obj = obj[key];
-      continue;
+    if ((check.isObject(obj) || check.isArray(obj))) {
+      if (key in obj) {
+        obj = obj[key];
+        continue;
+      }
+    } else if (i === len-1 && (key === 0 || key === '0')) {
+      // here, `obj` is neither object nor array; if we are at the last key in `path`,
+      // allow a trailing '0' eg. get({ foo: 'bar' }, 'foo.0') => 'bar'
+      break;
     }
-    // it must be that `path` is invalid; exit
     return undefined;
   }
+
   return obj;
 
 };
